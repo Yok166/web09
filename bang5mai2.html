@@ -502,6 +502,8 @@
 			if(i<=5){
 				tn.innerHTML = "<p id='numbers' style='margin-top:4px'>"+ i +"</p>"
 				i++;
+			}
+			if (i < 6) {
 				btnp.style.cursor = "pointer";
 			}else{
 				btnp.style.cursor = "not-allowed";
@@ -512,9 +514,23 @@
 			if(i>0){
 				i--;
 				tn.innerHTML = "<p id='numbers' style='margin-top:4px'>"+ i +"</p>"
+			}
+			if (i > 0) {
 				btns.style.cursor = "pointer";
 			}else{
 				btns.style.cursor = "not-allowed";
+			}
+		}
+
+		btnp.onmouseover = function(){
+			if (i != 5) {
+				btnp.style.cursor = "pointer";
+			}
+		}	
+
+		btns.onmouseover = function(){
+			if (i != 0) {
+				btns.style.cursor = "pointer";
 			}
 		}	
 
