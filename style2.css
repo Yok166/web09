@@ -214,11 +214,15 @@
     top: 0;
     margin-left:50px;
 }
-#bigp{
+
+.bigps{
+	position:absolute;
+	top:0;
+	left:0;
 	width:508px;
     height:508px;
     margin-left:50px;
-}
+	}
 
 .slide {
 	width:308px;
@@ -260,10 +264,22 @@
 		height:40px;
 		width:150px;
 		background-color:white;
-		border-radius:3px;	
+		border-radius:5px;	
 		border:1px solid #ff0754;	
 		color:#ff0754;
 		margin-left:25px;
+		margin-right:10px;
+	}
+
+
+	.bl{
+		height:40px;
+		width:150px;
+		background-color:white;
+		border-radius:5px;	
+		border:1px solid #ff0754;	
+		color:#ff0754;
+		margin-left:35px;
 		margin-right:10px;
 	}
 
@@ -271,7 +287,7 @@
 		height:40px;
 		width:150px;
 		background-color:#ff0754;
-		border-radius:3px;		
+		border-radius:5px;		
 		border:1px solid #ff0754;	
 		color:white;
 	}
@@ -329,4 +345,18 @@
 			list-style:none;
 		}
 
-	
+	button{
+		outline:none;
+	}
+
+	.shop{
+		display:none;
+		position:fixed;
+		top:250px;
+		left:480px;
+		z-index:999;
+		background-color:white;
+		height:200px;
+		width:400px;
+		border:2px solid #aba8dd;
+	}
