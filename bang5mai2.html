@@ -86,7 +86,7 @@
 	<div class="naa">
 		<div class="nav2">
 			<div class="nav3">
-				<a href="https://yok166.github.io/web09/bang5mai.html" style="color:white;">首页</a>
+				<a href="" style="color:white;">首页</a>
 			</div>
 			<div class="nav4">
 				<a href="" style="color:white;">热门品牌</a>
@@ -119,6 +119,18 @@
 </div>
 </div>
 
+	<div class="shop" id="sp">
+		<div><a href=""><p style="padding-left:380px" onclick="disappear()">X</p></a></div>
+		<img src="./img/rr11_02.jpg">
+		<div style="height:40px;">  
+			<button class="bl" onclick="disappear()">继续购物</button>
+			<button class="bb2" onclick="disappear()">去购物车结算</button>
+		</div>
+	</div>
+
+
+
+
 
 <div class="main">
 	<div class="main1">
@@ -135,19 +147,17 @@
 					<div style="overflow:hidden;width:308px;height:308px;float:left;position:relative;outline: 2px solid #d0cdc7;">
 						<div id="img1" >
 							<div id="slide1" class="slide"><img src="./img/pp0.jpg"></div>
-							<div id="slider"></div>
+							<div id="slider" style="pointer-events: none;"></div>
+							<div id="slide2" class="slide"><img src="./img/pp1.jpg"></div>
 						</div>
 
-						<div id="imgs" >
-							<div id="slide2" class="slide"><img src="./img/pp1.jpg"></div>
-							<div id="slider2"></div>
-						</div>
+						
 					</div>
 							
 					<div style="margin-top:24px;height:66px;float:left">
 						<div style="float:left"><img src="./img/spanl.jpg" id="left"></div>
-						<div id="i1" style="float:left;margin-right:2px;"><img src="./img/sp0.jpeg" onclick="prev()"></div>
-						<div id="i2" style="margin-right:147px;float:left"><img src="./img/sp1.jpeg" onclick="next()"></div>
+						<div id="i1" style="float:left;margin-right:2px;"><img src="./img/sp0.jpeg"></div>
+						<div id="i2" style="margin-right:147px;float:left"><img src="./img/sp1.jpeg"></div>
 						<div style="float:left"><img src="./img/spanr.jpg" id="right"></div>
 					</div>
 					
@@ -156,11 +166,10 @@
 						<img src="./img/bigpp0.jpg" id="bimg">
 					</div>
 					<div id="img3">
-						<img src="./img/bigpp1.jpg" id="bigp" style="position:absolute;top:0;left:0">
+						<img src="./img/bigpp1.jpg" id="bigp" class="bigps">
 					</div>
 
-
-					<div style="float:left;margin-left:16px;margin-top:17px">
+				<div style="float:left;margin-left:16px;margin-top:17px">
 						<p>	韩国 RE:	CIPE 水晶清爽防水防晒喷雾SPF50 150ml/瓶</p>
 						<p style="font-size:11px;color:#676660">【限购三件】 超透明无痕防晒，防水防汗定定妆，保湿降温不粘腻。水晶防晒喷雾，喷后皮</p>
 						<p style="font-size:11px;color:#676660">肤水润，不油，不留白，更不会像防晒霜那样抹不开，非常实用，开始存货吧。</p>
@@ -183,7 +192,7 @@
 						<div style="height:29px;margin-top:20px">
 							<a style="font-size:11px;margin-left:25px;margin-right:78px;float:left">数量</a>
 							<button id="btns" onclick="min()"  class="btnq" style="cursor:pointer">-</button>
-							<div id = "tn" class="tnum"></div>
+							<input id = "tn" class="tnum">
 							<button id="btnp" onclick="addNumber()"class="btnq" style="cursor:pointer">+</button>
 							<a style="font-size:12px;margin-left:20px">件（库存5件）</a>
 						</div>
@@ -201,7 +210,7 @@
 
 						<div style="height:40px;">  
 							<button class="bb1">立即购买</button>
-							<button class="bb2">立即购买</button>
+							<button class="bb2" onclick = "shops()">加入购物车</button>
 						</div>
 					</div>
 
@@ -333,17 +342,13 @@
 			</div>
 		</div>
 
-
-
-
-
-<script>
-				
+		<script>
 		var img1 = document.getElementById("img1");
 		var img2 = document.getElementById("img2");
 		var img3 = document.getElementById("img3");
 		var imgs = document.getElementById("imgs");
 		var slider = document.getElementById("slider");
+		var slide1 = document.getElementById("slide1");
 		var slide2 = document.getElementById("slide2");
 		var Bimg = document.getElementById("bimg");
 		var Bigp = document.getElementById("bigp");
@@ -360,9 +365,16 @@
 		var g2 = document.getElementById('g2');
 		var btnp = document.getElementById('btnp');
 		var btns = document.getElementById('btns');
+		var Shop = document.getElementById('sp');
 		var index = 1; 
 
+		function shops(){
+			Shop.style.display = "block";
+		}
 
+		function disappear(){
+			Shop.style.display = "none";
+		}
 
 
 		window.onload = function(){
@@ -381,20 +393,25 @@
 
 	}
 
-
-
-
-
-		img1.onmouseover = function () {
+		slide1.onmouseover = function () {
 			slider.style.display = 'block';
 			img2.style.display = 'block';
 		}
-		img1.onmouseout = function () {
+		slide1.onmouseout = function () {
 			slider.style.display = 'none';
 			img2.style.display = 'none';
 		}
 
-		img1.onmousemove = function (ev) {
+		slide2.onmouseover = function () {
+			slider.style.display = 'block';
+			img3.style.display = 'block';
+		}
+		slide2.onmouseout = function () {
+			slider.style.display = 'none';
+			img3.style.display = 'none';
+		}
+
+		slide1.onmousemove = function (ev) {
 			var ev = ev || window.event;
 
 			var oL = ev.clientX - 169.2 - slider.offsetWidth / 2;
@@ -413,44 +430,31 @@
 
 			Bimg.style.left = -scale * oL + 'px'
 			Bimg.style.top = -scale * oT + 'px'
+			Bigp.style.left = -scale * oL + 'px'
+			Bigp.style.top = -scale * oT + 'px'
 	
 		}	
-
-
-
-		imgs.onmouseover = function () {
-			slider2.style.display = 'block';
-			img3.style.display = 'block';
-		}
-		imgs.onmouseout = function () {
-			slider2.style.display = 'none';
-			img3.style.display = 'none';
-		}
-
-		imgs.onmousemove = function (ev) {
+		slide2.onmousemove = function (ev) {
 			var ev = ev || window.event;
 
-			var oL = (ev.clientX - 169.2 - slider.offsetWidth / 2)-60;
-			var oT = (ev.clientY - 180.2 - slider.offsetHeight / 2)-60;
+			var oL = ev.clientX - 169.2 - slider.offsetWidth / 2;
+			var oT = ev.clientY - 180.2 - slider.offsetHeight / 2;
 
-			var oMaxw = imgs.offsetWidth - slider.offsetWidth;
-			var oMaxh = imgs.offsetHeight - slider.offsetHeight;
+			var oMaxw = img1.offsetWidth - slider.offsetWidth;
+			var oMaxh = img1.offsetHeight - slider.offsetHeight;
 
 			oL = oL > oMaxw ? oMaxw : oL < 0 ? 0 : oL;
+
 			oT = oT > oMaxh ? oMaxh : oT < 0 ? 0 : oT;
 
-			slider2.style.left = oL + 'px';
-			slider2.style.top = oT + 'px';
-			var s = img3.offsetWidth / slider.offsetWidth;
+			slider.style.left = oL + 'px';
+			slider.style.top = oT + 'px';
+			var scale = img3.offsetWidth / slider.offsetWidth;
 
-			Bigp.style.left = -s * oL + 'px'
-			Bigp.style.top = -s * oT + 'px'
+			Bigp.style.left = -scale * oL + 'px'
+			Bigp.style.top = -scale * oT + 'px'
 	
-		}	
-
-
-	
-
+		}
 
 
 
@@ -471,19 +475,38 @@
 
 		function next() {	
 			moveb1();
-			img1.style.display = "none";
-			imgs.style.display = "block";
+			slide1.style.display = "none";
+			slider.style.display = "none"
+			slide2.style.display = "block"
 		}
 
 
-		function prev() {
+		 function prev() {
 			moveb2();
-			imgs.style.display = "none";
-			img1.style.display = "block";
+			
+			slide2.style.display = "none"
+			slide1.style.display = "block";
+			slider.style.display = "block"
 
 		}
 
+		i1.onmouseover = function(){
+			moveb2();
+			
+			slide2.style.display = "none"
+			slide1.style.display = "block";
+			slider.style.display = "block"
+		}
+
+		i2.onmouseover = function(){
+			moveb1();
+			slide1.style.display = "none";
+			slider.style.display = "none"
 		
+			slide2.style.display = "block"
+		}
+
+
 		function buu1(){
 			btn2.className = "bu2";
 			btn1.className= "bu";
@@ -497,10 +520,10 @@
 		}
 
 		var i = 1;
-		tn.innerHTML = "<p id='numbers' style='margin-top:4px'>0</p>"
+		tn.value = "0";
 		function addNumber(){
 			if(i<=5){
-				tn.innerHTML = "<p id='numbers' style='margin-top:4px'>"+ i +"</p>"
+				tn.value = i;
 				i++;
 			}
 			if (i < 6) {
@@ -510,10 +533,14 @@
 			}
 		}
 
+
+		
+
+
 		function min(){
 			if(i>0){
 				i--;
-				tn.innerHTML = "<p id='numbers' style='margin-top:4px'>"+ i +"</p>"
+				tn.value = i;
 			}
 			if (i > 0) {
 				btns.style.cursor = "pointer";
@@ -534,8 +561,5 @@
 			}
 		}	
 
-	</script>
-
-
-</body>
-</html>
+</script>
+	</body>
