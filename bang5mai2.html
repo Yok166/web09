@@ -119,6 +119,7 @@
 </div>
 </div>
 
+<div class="bk" id="dark">
 	<div class="shop" id="sp">
 		<div><a href=""><p style="padding-left:380px" onclick="disappear()">X</p></a></div>
 		<img src="./img/rr11_02.jpg">
@@ -128,7 +129,7 @@
 		</div>
 	</div>
 
-
+</div>
 
 
 
@@ -365,15 +366,16 @@
 		var g2 = document.getElementById('g2');
 		var btnp = document.getElementById('btnp');
 		var btns = document.getElementById('btns');
+		var Dark = document.getElementById('dark')
 		var Shop = document.getElementById('sp');
 		var index = 1; 
 
 		function shops(){
-			Shop.style.display = "block";
+			Dark.style.display = "block";
 		}
 
 		function disappear(){
-			Shop.style.display = "none";
+			Dark.style.display = "none";
 		}
 
 
