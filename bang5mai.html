@@ -1119,11 +1119,11 @@
             ul.style.top = top + "px"; 
 
   
-            if (-1 * ul.offsetTop >= ul.offsetHeight / 2) {
+            if (-1 * ul.offsetTop >= ul.offsetHeight) {
                 ul.style.top = 0;
             }
         }
-        var t = setInterval(show,20);
+        var t = setInterval(show,50);
 
       
         var li = document.getElementsByTagName("li");
