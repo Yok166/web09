@@ -232,26 +232,24 @@
 	li {
 		list-style: none;
 	}
-	.box>span {
-	display: block;
-	width: 24px;
-	height: 62px;
-	text-align: center;
-	cursor: pointer;
-	top: 175px;
-	line-height: 50px;
-	background: rgb(255, 0, 0);
-	font-size: 30px;
-	position: absolute;
-	opacity: 0;
-	}
-
 	#left {
 		left: 30px;
+		position: relative;
+		top:150px;
+		overflow:hidden;
+		height:60px;
+		width:60px;
+		float:left;
 	}
 
 	#right {
+		position: relative;
+		top:150px;
 		right: 30px;
+		position: absolute;
+		overflow:hidden;
+		height:60px;
+		width:60px;
 	}
 
 	.nava {
